@@ -1,4 +1,4 @@
-"""Test Cases for Cumulative Sum of a Range"""
+"""Test Cases for Cumulative Sum of a Range Exercise"""
 
 import pytest
 

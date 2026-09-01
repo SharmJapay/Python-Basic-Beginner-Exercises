@@ -15,6 +15,9 @@ Inside each folder, you will find a standalone solution to a specific beginner-l
 1) Arithmetic Product and Conditional Logic
 2) Cumulative Sum of a Range
 3) String Indexing and Even Slicing
+4) String Slicing and Substring Removal
+5) Variable Swapping (The In-Place Method)
+6) Calculating Factorial with a Loop
 
 ## Running the Code
 Make sure you have Python installed on your system. You can download it from the [Official Python Website](https://python.org).

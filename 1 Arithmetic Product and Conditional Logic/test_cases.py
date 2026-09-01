@@ -1,4 +1,4 @@
-"""Test Cases for Arithmetic Product and Conditional Logic"""
+"""Test Cases for Arithmetic Product and Conditional Logic Exercise"""
 
 import pytest
 

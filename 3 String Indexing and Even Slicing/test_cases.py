@@ -1,4 +1,4 @@
-"""Test Cases for String Indexing and Even Slicing"""
+"""Test Cases for String Indexing and Even Slicing Exercise"""
 
 import pytest
 

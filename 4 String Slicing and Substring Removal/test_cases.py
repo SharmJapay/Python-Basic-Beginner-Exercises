@@ -1,4 +1,4 @@
-"""Test Cases for String Slicing and Substring Removal"""
+"""Test Cases for String Slicing and Substring Removal Exercise"""
 
 import pytest
 
@@ -181,9 +181,9 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
         # Case 6: Length of text is equal to index, index is positive integer 5, position is 'end' -> Should return empty ""
         ("Hello", 5, "end", ""),
         # Case 7: Length of text is equal to index, index is positive integer 5, position is 'start' -> Should return empty ""
-        ("Hello", 10, "start", ""),
+        ("Hello World!", 20, "start", ""),
         # Case 8: Length of text is equal to index, index is positive integer 5, position is 'end' -> Should return empty ""
-        ("Hello", 10, "end", ""),
+        ("Hello World!", 20, "end", ""),
     ],
 )
 def test_remove_chars(text, index, position, expected):
