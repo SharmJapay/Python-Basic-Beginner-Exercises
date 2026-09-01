@@ -31,6 +31,23 @@ def get_number(place: str) -> int | None:
     return number
 
 
+def compute_product_or_sum_result(first_number: int, second_number: int) -> int:
+    """Return product of two numbers if the result is less than or equal to 1000, otherwise return sum.
+
+    Arguments
+        first_number [int]: The first value for calculation
+        second_number [int]: The second value for calculation
+
+    Returns
+        [int] - The integer value of product or sum result
+    """
+
+    if first_number * second_number <= 1000:
+        return first_number * second_number
+    else:
+        return first_number + second_number
+
+
 def main() -> None:
     """Starts the program and executes the applications flow
 
@@ -45,12 +62,8 @@ def main() -> None:
     second_number = get_number("second")
 
     if first_number and second_number:
-        product = first_number * second_number
-
-        if product <= 1000:
-            print(f"The result (product) is {product}")
-        else:
-            print(f"The result (sum) is {first_number + second_number}")
+        result = compute_product_or_sum_result(first_number, second_number)
+        print(f"The result is {result}")
 
     else:
         print("Something error occured while doing operation")
