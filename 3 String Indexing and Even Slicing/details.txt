@@ -1,0 +1,20 @@
+Practice Problem: Display only those characters which are present at an even index number in given string.
+
+Exercise Purpose: Understand how data is stored in memory using zero-based indexing. In most languages, the first character is at position 0, the second at 1, and so on. Mastering indexing is vital for data parsing.
+
+Given Input: String: "Learning Python is fun"
+
+Expected Output:
+Original String is 'Learning Python is fun'
+Printing only even index chars
+L
+a
+n
+n
+
+y
+h
+n
+i
+
+u
