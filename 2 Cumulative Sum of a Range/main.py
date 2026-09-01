@@ -1,19 +1,29 @@
 """Solution for Cumulative Sum of a Range"""
 
+from input_validation import get_number, confirm_exit
+
 
 def main() -> None:
     """Starts the program and executes the applications flow"""
 
-    prev_number = 0
+    while True:
+        prev_number = 0
+        range_number = get_number()
 
-    print("Printing current and previous number sum in a range(10)")
+        print("Printing current and previous number sum in a range(10)")
 
-    for number in range(10):
-        print(
-            f"Current Number {number} Previous Number {prev_number} Sum: {number + prev_number}"
-        )
+        for number in range(range_number):
+            print(
+                f"Current Number {number} Previous Number {prev_number} Sum: {number + prev_number}"
+            )
 
-        prev_number = number
+            prev_number = number
+
+        # Checks if user wants to exit program
+        quit_program = confirm_exit()
+
+        if quit_program.lower() == "yes":
+            break
 
 
 if __name__ == "__main__":
