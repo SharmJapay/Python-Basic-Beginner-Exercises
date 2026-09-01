@@ -45,3 +45,25 @@ def test_get_number_retries_on_invalid_input(monkeypatch, capsys):
     captured = capsys.readouterr()
     error_msg = "Error! The number must be positive integer value only"
     assert captured.out.count(error_msg) == 3
+
+
+@pytest.mark.parametrize(
+    "first, second, expected",
+    [
+        # Case 1: Product is well below 1000 -> Should return the product
+        (10, 20, 200),
+        # Case 2: Product is exactly 1000 (Boundary condition) -> Should return the product
+        (20, 50, 1000),
+        # Case 3: Product is exactly 1001 (Boundary condition) -> Should return the sum
+        (1001, 1, 1002),
+        # Case 4: Product is much greater than 1000 -> Should return the sum
+        (30, 40, 70),
+        # Case 5: Negative numbers (Product is <= 1000) -> Should return the product
+        (-5, 10, -50),
+        # Case 6: Zero (Product is 0, which is <= 1000) -> Should return the product
+        (0, 5000, 0),
+    ],
+)
+def test_compute_product_or_sum_result(first, second, expected):
+    """Test that the function correctly switches between product and sum based on the 1000 threshold."""
+    assert compute_product_or_sum_result(first, second) == expected
