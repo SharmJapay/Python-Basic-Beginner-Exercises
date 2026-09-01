@@ -1,10 +1,14 @@
-"""Solution for Cumulative Sum of a Range"""
+"""Solution for Cumulative Sum of a Range Exercise"""
 
 from input_validation import get_number, confirm_exit
 
 
 def main() -> None:
-    """Starts the program and executes the applications flow"""
+    """Starts the program and executes the applications flow
+
+    Returns
+        None
+    """
 
     while True:
         prev_number = 0

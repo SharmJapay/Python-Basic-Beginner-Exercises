@@ -1,4 +1,4 @@
-"""Solution for Arithmetic Product and Conditional Logic"""
+"""Solution for Arithmetic Product and Conditional Logic Exercise"""
 
 from input_validation import get_number, confirm_exit
 

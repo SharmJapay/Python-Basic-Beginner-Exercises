@@ -1,10 +1,14 @@
-"""Solution for String Indexing and Even Slicing"""
+"""Solution for String Indexing and Even Slicing Exercise"""
 
 from input_validation import get_text, confirm_exit
 
 
 def main() -> None:
-    """Starts the program and executes the applications flow"""
+    """Starts the program and executes the applications flow
+
+    Returns
+        None
+    """
 
     while True:
         text = get_text()

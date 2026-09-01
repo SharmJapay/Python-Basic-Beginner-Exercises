@@ -1,4 +1,4 @@
-"""Solution for String Slicing and Substring Removal"""
+"""Solution for String Slicing and Substring Removal Exercise"""
 
 from input_validation import (
     get_text,
@@ -10,7 +10,11 @@ from input_validation import (
 
 
 def main() -> None:
-    """Starts the program ang executes the application flow"""
+    """Starts the program and executes the applications flow
+
+    Returns
+        None
+    """
 
     while True:
         text = get_text()
