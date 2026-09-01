@@ -39,7 +39,7 @@ def get_index() -> int:
         try:
             number = int(input("Enter index number: "))
 
-            if number > 0:
+            if number >= 0:
                 return number
 
             raise ValueError
@@ -100,9 +100,10 @@ def remove_chars(text: str, index: int, position: str) -> str:
         [str]: The newly sanitized string value
     """
 
-    if text and index and position:
+    if text and index >= 0 and position:
         if position == "start":
             return text[index:]
 
         elif position == "end":
-            return text[:-index]
+            index = -index if index > 0 else None
+            return text[:index]
