@@ -7,7 +7,7 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def get_text() -> str:
+def input_text() -> str:
     """Returns an input string
 
     Returns
@@ -28,7 +28,7 @@ def get_text() -> str:
             continue
 
 
-def get_index() -> int:
+def input_index_number() -> int:
     """Returns a positive integer value for the index number
 
     Returns
@@ -48,7 +48,7 @@ def get_index() -> int:
             print("Error! The input must be positive integer only. Try Again.")
 
 
-def get_position() -> str:
+def input_position() -> str:
     """Returns 'start' or 'end' string value
 
     Returns

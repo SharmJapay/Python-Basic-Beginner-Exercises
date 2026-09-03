@@ -1,9 +1,9 @@
 """Solution for String Slicing and Substring Removal Exercise"""
 
 from input_validation import (
-    get_text,
-    get_index,
-    get_position,
+    input_text,
+    input_index_number,
+    input_position,
     remove_chars,
     confirm_exit,
 )
@@ -17,8 +17,8 @@ def main() -> None:
     """
 
     while True:
-        text = get_text()
-        index = get_index()
+        text = input_text()
+        index = input_index_number()
 
         if index >= len(text):
             print(
@@ -27,7 +27,7 @@ def main() -> None:
             print(f"The final text is '{text}'\n")
 
         else:
-            position = get_position()
+            position = input_position()
             sanitized_text = remove_chars(text, index, position)
             print(f"The new text is '{sanitized_text}'\n")
 

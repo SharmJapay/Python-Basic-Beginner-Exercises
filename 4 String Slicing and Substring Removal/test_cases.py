@@ -3,28 +3,28 @@
 import pytest
 
 from input_validation import (
-    get_text,
-    get_index,
-    get_position,
+    input_text,
+    input_index_number,
+    input_position,
     remove_chars,
     confirm_exit,
 )
 
 
-def test_get_text_valid_string(monkeypatch):
+def test_input_text_valid_string(monkeypatch):
     """Test standard behavior when the user inputs a string."""
 
     # Arrange: Simulate typing 'Learning Python is fun' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "Learning Python is fun")
 
     # Act
-    result = get_text()
+    result = input_text()
 
     # Assert
     assert result == "Learning Python is fun"
 
 
-def test_get_text_invalid_empty_input(monkeypatch, capsys):
+def test_input_text_invalid_empty_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (empty value) and succeeds on a valid string."""
 
     # Arrange: Simulate typing '', then '  ', and finally 'Hello World'
@@ -32,7 +32,7 @@ def test_get_text_invalid_empty_input(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     # Act
-    result = get_text()
+    result = input_text()
 
     # Assert
     assert result == "Hello World"
@@ -43,20 +43,20 @@ def test_get_text_invalid_empty_input(monkeypatch, capsys):
     assert captured.out.count(error_msg) == 2
 
 
-def test_get_index_valid_first_try(monkeypatch):
+def test_input_index_number_valid_first_try(monkeypatch):
     """Test standard behavior when the user inputs a valid positive integer immediately."""
 
     # Arrange: Simulate typing '25' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "25")
 
     # Act
-    result = get_index()
+    result = input_index_number()
 
     # Assert
     assert result == 25
 
 
-def test_get_index_retries_on_invalid_input(monkeypatch, capsys):
+def test_input_index_number_retries_on_invalid_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (letters, empty value, negative numbers) and succeeds on a valid number."""
 
     # Arrange: Simulate typing 'abc', then '', then '-5', and finally '36'
@@ -64,7 +64,7 @@ def test_get_index_retries_on_invalid_input(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     # Act
-    result = get_index()
+    result = input_index_number()
 
     # Assert
     assert result == 36
@@ -75,33 +75,33 @@ def test_get_index_retries_on_invalid_input(monkeypatch, capsys):
     assert captured.out.count(error_msg) == 3
 
 
-def test_get_position_valid_start_string(monkeypatch):
+def test_input_position_valid_start_string(monkeypatch):
     """Test standard behavior when the user inputs a 'start' string."""
 
     # Arrange: Simulate typing 'start' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "start")
 
     # Act
-    answer = get_position()
+    answer = input_position()
 
     # Assert
     assert answer == "start"
 
 
-def test_get_position_valid_end_string(monkeypatch):
+def test_input_position_valid_end_string(monkeypatch):
     """Test standard behavior when the user inputs a 'end' string."""
 
     # Arrange: Simulate typing 'end' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "end")
 
     # Act
-    answer = get_position()
+    answer = input_position()
 
     # Assert
     assert answer == "end"
 
 
-def test_get_position_retries_on_invalid_input(monkeypatch, capsys):
+def test_input_position_retries_on_invalid_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (empty value and other strings aside from 'start' or 'end') and succeeds on a 'end' string."""
 
     # Arrange: Simulate typing 'xyz', then '10', then '', and finally 'end'
@@ -109,7 +109,7 @@ def test_get_position_retries_on_invalid_input(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     # Act
-    answer = get_position()
+    answer = input_position()
 
     # Assert
     assert answer == "end"
