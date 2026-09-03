@@ -1,6 +1,6 @@
 """Solution for Arithmetic Product and Conditional Logic Exercise"""
 
-from input_validation import get_number, confirm_exit
+from input_validation import input_number, confirm_exit
 
 
 def compute_product_or_sum_result(first_number: int, second_number: int) -> int:
@@ -28,8 +28,8 @@ def main() -> None:
         None
     """
     while True:
-        first_number = get_number("first")
-        second_number = get_number("second")
+        first_number = input_number("first")
+        second_number = input_number("second")
 
         if first_number and second_number:
             result = compute_product_or_sum_result(first_number, second_number)

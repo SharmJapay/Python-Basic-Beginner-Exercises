@@ -7,7 +7,7 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def get_number(place: str) -> int | None:
+def input_number(place: str) -> int | None:
     """Returns a valid integer value if input conditions are met, otherwise None
 
     Arguments
