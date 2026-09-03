@@ -1,4 +1,4 @@
-"""Solution for Cumulative Sum of a Range Exercise"""
+"""Solution for List Manipulation - Add or Remove Exercise"""
 
 from input_validation import input_item, input_index_number, do_action, confirm_exit
 
