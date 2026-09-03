@@ -17,7 +17,11 @@ def reverse(text: str) -> str:
 
 
 def main() -> None:
-    """Starts the program and executes the applications flow"""
+    """Starts the program and executes the applications flow
+
+    Returns
+        None
+    """
 
     while True:
         text = input_text()

@@ -118,13 +118,13 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
 @pytest.mark.parametrize(
     "list_items, item, expected",
     [
-        # Case 1: "fig" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "fig"]'
+        # Case 1: Add "fig" in '["apple", "banana", "cherry", "date", "elderberry"]' -> Should return '["apple", "banana", "cherry", "date", "elderberry", "fig"]'
         (
             ["apple", "banana", "cherry", "date", "elderberry"],
             "fig",
             ["apple", "banana", "cherry", "date", "elderberry", "fig"],
         ),
-        # Case 2: "grape" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "grape"]'
+        # Case 2: Add "grape" in '["apple", "banana", "cherry", "date", "elderberry"]' -> Should return '["apple", "banana", "cherry", "date", "elderberry", "grape"]'
         (
             ["apple", "banana", "cherry", "date", "elderberry"],
             "grape",
@@ -141,13 +141,13 @@ def test_add_item(list_items, item, expected):
 @pytest.mark.parametrize(
     "list_items, index, expected",
     [
-        # Case 1: "fig" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "fig"]'
+        # Case 1: Remove index 0 in '["apple", "banana", "cherry", "date", "elderberry"]' -> Should return '["banana", "cherry", "date", "elderberry"]'
         (
             ["apple", "banana", "cherry", "date", "elderberry"],
             0,
             ["banana", "cherry", "date", "elderberry"],
         ),
-        # Case 2: "grape" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "grape"]'
+        # Case 2: Remove index 2 in '["apple", "banana", "cherry", "date", "elderberry"]' -> Should return '["apple", "banana", "date", "elderberry"]'
         (
             ["apple", "banana", "cherry", "date", "elderberry"],
             2,

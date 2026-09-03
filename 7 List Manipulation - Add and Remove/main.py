@@ -34,7 +34,11 @@ def remove_item(list_items: list, index: int) -> list:
 
 
 def main() -> None:
-    """Starts the program and executes the applications flow"""
+    """Starts the program and executes the applications flow
+
+    Returns
+        None
+    """
 
     fruits = ["apple", "banana", "cherry", "date", "elderberry"]
     print(f"\nOriginal Fruit List: {fruits}")
