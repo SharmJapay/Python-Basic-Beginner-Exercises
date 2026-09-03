@@ -7,7 +7,7 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def get_number() -> int:
+def input_number() -> int:
     """Returns a positive integer value
 
     Returns
@@ -16,7 +16,7 @@ def get_number() -> int:
 
     while True:
         try:
-            number = int(input("Enter an integer number: "))
+            number = int(input("\nEnter an integer number: "))
 
             if number >= 0:
                 return number
@@ -36,7 +36,7 @@ def confirm_exit() -> str:
 
     while True:
         try:
-            answer = input("Do you want to close the program? (Type 'Yes' or 'No'): ")
+            answer = input("\nDo you want to close the program? (Type 'Yes' or 'No'): ")
 
             if answer.lower() == "yes" or answer.lower() == "no":
                 return answer

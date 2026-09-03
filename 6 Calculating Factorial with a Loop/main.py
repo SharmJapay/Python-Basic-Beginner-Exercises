@@ -1,6 +1,6 @@
 """Solution for Calculating Factorial with a Loop Exercise"""
 
-from input_validation import get_number, confirm_exit
+from input_validation import input_number, confirm_exit
 
 
 def factorial(number: int) -> int:
@@ -26,7 +26,7 @@ def main() -> None:
     """
 
     while True:
-        number = get_number()
+        number = input_number()
         result_method1 = 1
 
         # Solution Method: Use of For Loop

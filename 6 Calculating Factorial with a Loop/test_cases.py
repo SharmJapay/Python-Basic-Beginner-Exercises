@@ -3,23 +3,23 @@
 import pytest
 
 from main import factorial
-from input_validation import get_number, confirm_exit
+from input_validation import input_number, confirm_exit
 
 
-def test_get_number_valid_first_try(monkeypatch):
+def test_input_number_valid_first_try(monkeypatch):
     """Test standard behavior when the user inputs a valid positive integer immediately."""
 
     # Arrange: Simulate typing '12' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "12")
 
     # Act
-    result = get_number()
+    result = input_number()
 
     # Assert
     assert result == 12
 
 
-def test_get_number_retries_on_invalid_input(monkeypatch, capsys):
+def test_input_number_retries_on_invalid_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (letters, empty value, negative numbers) and succeeds on a valid number."""
 
     # Arrange: Simulate typing 'thing', then '', then '-1', and finally '20'
@@ -27,7 +27,7 @@ def test_get_number_retries_on_invalid_input(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     # Act
-    result = get_number()
+    result = input_number()
 
     # Assert
     assert result == 20
