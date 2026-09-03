@@ -7,7 +7,7 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def get_number() -> int:
+def input_number() -> int:
     """Returns a positive integer value
 
     Returns

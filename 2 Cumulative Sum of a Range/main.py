@@ -1,6 +1,6 @@
 """Solution for Cumulative Sum of a Range Exercise"""
 
-from input_validation import get_number, confirm_exit
+from input_validation import input_number, confirm_exit
 
 
 def main() -> None:
@@ -12,7 +12,7 @@ def main() -> None:
 
     while True:
         prev_number = 0
-        range_number = get_number()
+        range_number = input_number()
 
         print("Printing current and previous number sum in a range(10)")
 
