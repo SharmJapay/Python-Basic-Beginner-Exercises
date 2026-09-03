@@ -2,23 +2,23 @@
 
 import pytest
 
-from input_validation import get_text, confirm_exit
+from input_validation import input_text, confirm_exit
 
 
-def test_get_text_valid_string(monkeypatch):
+def test_input_text_valid_string(monkeypatch):
     """Test standard behavior when the user inputs a string."""
 
     # Arrange: Simulate typing 'Learning Python is fun' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "Learning Python is fun")
 
     # Act
-    result = get_text()
+    result = input_text()
 
     # Assert
     assert result == "Learning Python is fun"
 
 
-def test_get_text_invalid_empty_input(monkeypatch, capsys):
+def test_input_text_invalid_empty_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (empty value) and succeeds on a valid string."""
 
     # Arrange: Simulate typing '', and then 'Hello World'
@@ -26,7 +26,7 @@ def test_get_text_invalid_empty_input(monkeypatch, capsys):
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
     # Act
-    result = get_text()
+    result = input_text()
 
     # Assert
     assert result == "Hello World"

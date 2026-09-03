@@ -7,7 +7,7 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def get_text() -> str:
+def input_text() -> str:
     """Returns an input string
 
     Returns
