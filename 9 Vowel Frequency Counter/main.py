@@ -13,15 +13,22 @@ def count_vowels(text: str) -> int:
         [int]: The number of vowel occurences in a string
     """
 
-    vowels = ["a", "e", "i", "o", "u"]
-    counter = 0
+    vowels = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
+    total_count = 0
 
-    for vowel in vowels:
+    for vowel in vowels.keys():
+        vowel_count = 0
+
         for char in text.lower():
             if char == vowel:
-                counter += 1
+                vowel_count += 1
+                total_count += 1
 
-    return counter
+        vowels[vowel] = vowel_count
+
+    print(f"List of vowels and their counts: {vowels}")
+
+    return total_count
 
 
 def main() -> None:
@@ -35,7 +42,7 @@ def main() -> None:
         text = input_text()
         number_of_vowels = count_vowels(text)
 
-        print(f"\nThe number of vowels in the string '{text}' is {number_of_vowels}")
+        print(f"\nThe number of vowels in the string '{text}' is '{number_of_vowels}'")
 
         # Checks if user wants to exit program
         quit_program = confirm_exit()
