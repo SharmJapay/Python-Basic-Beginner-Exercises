@@ -2,6 +2,7 @@
 
 import pytest
 
+from main import add_item, remove_item
 from input_validation import input_item, input_index_number, confirm_exit
 
 
@@ -112,3 +113,49 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
     captured = capsys.readouterr()
     error_msg = "Error! Accepts 'Yes' or 'No' values only. Try Again."
     assert captured.out.count(error_msg) == 4
+
+
+@pytest.mark.parametrize(
+    "list_items, item, expected",
+    [
+        # Case 1: "fig" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "fig"]'
+        (
+            ["apple", "banana", "cherry", "date", "elderberry"],
+            "fig",
+            ["apple", "banana", "cherry", "date", "elderberry", "fig"],
+        ),
+        # Case 2: "grape" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "grape"]'
+        (
+            ["apple", "banana", "cherry", "date", "elderberry"],
+            "grape",
+            ["apple", "banana", "cherry", "date", "elderberry", "grape"],
+        ),
+    ],
+)
+def test_add_item(list_items, item, expected):
+    """Test that the function correctly outputs the expected value."""
+
+    assert add_item(list_items, item) == expected
+
+
+@pytest.mark.parametrize(
+    "list_items, index, expected",
+    [
+        # Case 1: "fig" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "fig"]'
+        (
+            ["apple", "banana", "cherry", "date", "elderberry"],
+            0,
+            ["banana", "cherry", "date", "elderberry"],
+        ),
+        # Case 2: "grape" -> Should return '["apple", "banana", "cherry", "date", "elderberry", "grape"]'
+        (
+            ["apple", "banana", "cherry", "date", "elderberry"],
+            2,
+            ["apple", "banana", "date", "elderberry"],
+        ),
+    ],
+)
+def test_remove_item(list_items, index, expected):
+    """Test that the function correctly outputs the expected value."""
+
+    assert remove_item(list_items, index) == expected
