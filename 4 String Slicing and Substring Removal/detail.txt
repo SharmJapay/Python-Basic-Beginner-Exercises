@@ -7,5 +7,5 @@ remove_chars("Coding with Python is fun", 4, 'start')
 remove_chars("Coding with Python is fun", 2, 'end')
 
 Expected Output:
-ng with Python is fun
-Coding with Python is f
+The new text is 'ng with Python is fun'
+The new text is 'Coding with Python is f'

@@ -4,4 +4,5 @@ Exercise Purpose: This exercise demonstrates “Sequence Slicing.” Strings in 
 
 Given Input: text = "Python"
 
-Expected Output: Reversed: nohtyP
+Expected Output: 
+The reversed text is 'nohtyP'

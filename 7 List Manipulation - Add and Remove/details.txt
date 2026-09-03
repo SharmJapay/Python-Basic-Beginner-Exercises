@@ -4,4 +4,5 @@ Exercise Purpose: This exercise teaches “Dynamic Collection Management.” Lis
 
 Given Input: fruits = ["apple", "banana", "cherry", "date", "elderberry"]
 
-Expected Output: ['apple', 'cherry', 'date', 'elderberry', 'fig']
+Expected Output: 
+New Fruit List: ['apple', 'cherry', 'date', 'elderberry', 'fig']

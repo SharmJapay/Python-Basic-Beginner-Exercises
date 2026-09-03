@@ -4,4 +4,5 @@ Exercise Purpose: This exercise introduces “Membership Testing.” By checking
 
 Given Input: sentence = "Learning Python is fun!"
 
-Expected Output: Number of vowels: 6
+Expected Output:
+The number of vowels in the string 'Learning Python is fun!' is '6'

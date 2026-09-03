@@ -4,4 +4,6 @@ Exercise Purpose: This exercise explores “Mathematical Accumulation.” A fact
 
 Given Input: number = 5
 
-Expected Output: The factorial of 5 is 120
+Expected Output: 
+The factorial of 5 using first method is 120
+The factorial of 5 using second method is 120
