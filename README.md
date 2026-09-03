@@ -18,6 +18,10 @@ Inside each folder, you will find a standalone solution to a specific beginner-l
 4) String Slicing and Substring Removal
 5) Variable Swapping (The In-Place Method)
 6) Calculating Factorial with a Loop
+7) List Manipulation - Add and Remove
+8) String Reversal
+9) Vowel Frequency Counter
+10) Finding Extremes (Min or Max) in a List
 
 ## Running the Code
 Make sure you have Python installed on your system. You can download it from the [Official Python Website](https://python.org).
