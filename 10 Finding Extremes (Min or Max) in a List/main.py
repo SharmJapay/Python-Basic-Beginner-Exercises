@@ -1,6 +1,6 @@
 """Solution for Finding Extremes (Min or Max) in a List Exercise"""
 
-from input_validation import confirm_exit
+from input_validation import input_number_list, confirm_exit
 
 
 def main() -> None:
@@ -10,10 +10,10 @@ def main() -> None:
         None
     """
 
-    numbers = [45, 2, 89, 12, 7]
-    print(f"\nNumber List: {numbers}")
-
     while True:
+        numbers = input_number_list()
+        print(f"\nNumber List: {numbers}")
+
         maximum = max(numbers)
         minimum = min(numbers)
 

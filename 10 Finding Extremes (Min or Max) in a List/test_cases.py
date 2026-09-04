@@ -2,7 +2,58 @@
 
 import pytest
 
-from input_validation import confirm_exit
+from input_validation import input_number_list, confirm_exit
+
+
+def test_input_number_list_valid_number_list(monkeypatch):
+    """Test standard behavior when the user inputs a valid number list."""
+
+    # Arrange: Simulate typing 'Learning Python is fun' and hitting enter
+    monkeypatch.setattr("builtins.input", lambda _: "-10, 55, 64, 0, 667")
+
+    # Act
+    result = input_number_list()
+
+    # Assert
+    assert result == [-10, 55, 64, 0, 667]
+
+
+def test_input_number_list_invalid_input_list(monkeypatch, capsys):
+    """Test that the loop retries on bad input (different instance items) and succeeds on a valid number list."""
+
+    # Arrange: Simulate typing '', and then 'Hello World'
+    inputs = iter(["-10, asd, 64, /, 667", "1, 2, 3, 4, 5"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+
+    # Act
+    result = input_number_list()
+
+    # Assert
+    assert result == [1, 2, 3, 4, 5]
+
+    # Verify that the error message was printed 1 times for the 1 failed attempts
+    captured = capsys.readouterr()
+    error_msg = "Error! Cannot accept other values except integers only. Try Again."
+    assert captured.out.count(error_msg) == 1
+
+
+def test_input_number_list_invalid_empty_input(monkeypatch, capsys):
+    """Test that the loop retries on bad input (empty value) and succeeds on a valid string."""
+
+    # Arrange: Simulate typing '', and then 'Hello World'
+    inputs = iter(["", "1, 2, 3, 4, 5"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+
+    # Act
+    result = input_number_list()
+
+    # Assert
+    assert result == [1, 2, 3, 4, 5]
+
+    # Verify that the error message was printed 1 times for the 1 failed attempts
+    captured = capsys.readouterr()
+    error_msg = "Error! Cannot accept empty input value. Try Again."
+    assert captured.out.count(error_msg) == 1
 
 
 def test_confirm_exit_yes(monkeypatch):
