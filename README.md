@@ -22,6 +22,12 @@ Inside each folder, you will find a standalone solution to a specific beginner-l
 8) String Reversal
 9) Vowel Frequency Counter
 10) Finding Extremes (Min or Max) in a List
+11) Removing Duplicates from a List
+12) List Comparison and Boolean Logic
+13) Filtering Lists with Conditional Logic
+14) Substring Frequency Analysis
+15) Nested Loops for Pattern Generation
+
 
 ## Running the Code
 Make sure you have Python installed on your system. You can download it from the [Official Python Website](https://python.org).
