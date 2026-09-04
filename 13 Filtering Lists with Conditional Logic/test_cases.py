@@ -1,8 +1,8 @@
-"""Test Cases for List Comparison and Boolean Logic Exercise"""
+"""Test Cases for Filtering Lists with Conditional Logic Exercise"""
 
 import pytest
 
-from main import is_first_last_item_equal
+from main import divisible_by_five
 from input_validation import confirm_exit
 
 
@@ -54,13 +54,13 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
 @pytest.mark.parametrize(
     "list_items, expected",
     [
-        # Case 1: "[100, 200, 340, 540, 100]" -> Should return True (100 == 100)
-        ([100, 200, 340, 540, 100], True),
-        # Case 2: "[35, 10, 78, 65, 45]" -> Should return False (35 != 45)
-        ([35, 10, 78, 65, 45], False),
+        # Case 1: "[100, 200, 340, 540, 100]" -> Should return [10, 20, 55]
+        ([10, 20, 33, 46, 55], [10, 20, 55]),
+        # Case 2: "[35, 10, 78, 65, 45]" -> Should return False [35, 100, 65, 55]
+        ([35, 100, 78, 65, 43], [35, 100, 65]),
     ],
 )
-def test_is_first_last_item_equal(list_items, expected):
+def test_divisible_by_five(list_items, expected):
     """Test that the function correctly outputs the expected value."""
 
-    assert is_first_last_item_equal(list_items) == expected
+    assert divisible_by_five(list_items) == expected
