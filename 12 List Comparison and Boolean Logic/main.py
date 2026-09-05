@@ -1,6 +1,6 @@
 """Solution for List Comparison and Boolean Logic Exercise"""
 
-from input_validation import confirm_exit
+from input_validation import input_number_list, confirm_exit
 
 
 def is_first_last_item_equal(list_items: list) -> bool:
@@ -26,20 +26,13 @@ def main() -> None:
         None
     """
 
-    numbers_x = [10, 20, 30, 40, 10]
-    numbers_y = [75, 65, 35, 75, 30]
-
-    print(f"\nnumbers_x: {numbers_x}")
-    print(f"numbers_y: {numbers_y}")
-
     while True:
 
-        print(
-            f"\nGiven list: {numbers_x} | result is {is_first_last_item_equal(numbers_x)}"
-        )
+        numbers = input_number_list()
+        print(f"\nNumbers List: {numbers}")
 
         print(
-            f"Given list: {numbers_y} | result is {is_first_last_item_equal(numbers_y)}"
+            f"\nGiven list: {numbers} | result is {is_first_last_item_equal(numbers)}"
         )
 
         # Check if user wants to exit program
