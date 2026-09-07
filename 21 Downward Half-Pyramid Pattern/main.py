@@ -1,6 +1,6 @@
 """Solution for Downward Half-Pyramid Pattern Exercise"""
 
-from input_validation import input_number, confirm_exit
+from input_validation import input_rows, confirm_exit
 
 
 def main() -> None:
@@ -11,7 +11,7 @@ def main() -> None:
     """
 
     while True:
-        rows = input_number()
+        rows = input_rows()
         print(f"\nRows: {rows}\n")
 
         while rows > 0:

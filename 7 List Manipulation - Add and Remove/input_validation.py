@@ -8,7 +8,7 @@ from the console, alongside a core string-trimming utility function.
 
 
 def input_item() -> str:
-    """Returns an input item
+    """Returns an input item value
 
     Returns
         text [str]: The input item value
@@ -29,7 +29,7 @@ def input_item() -> str:
 
 
 def input_index_number() -> int:
-    """Returns a positive integer number value
+    """Returns an index number value
 
     Returns
         number [int]: The index number value

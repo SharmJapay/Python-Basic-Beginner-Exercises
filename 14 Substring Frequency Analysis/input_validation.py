@@ -8,7 +8,7 @@ from the console, alongside a core string-trimming utility function.
 
 
 def input_text() -> str:
-    """Returns an input string
+    """Returns an input string value
 
     Returns
         text [str]: The input string value

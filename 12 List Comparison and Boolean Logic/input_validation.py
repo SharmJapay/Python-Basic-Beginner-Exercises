@@ -11,7 +11,7 @@ def input_number_list() -> list:
     """Returns a list of numbers
 
     Returns
-        numbers [list]: a list of numbers
+        numbers [list]: List of numbers
     """
 
     while True:

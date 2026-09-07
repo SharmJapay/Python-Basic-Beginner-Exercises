@@ -11,7 +11,7 @@ def input_number() -> int:
     """Returns a positive integer value
 
     Returns
-        number [int]: The index number value
+        number [int]: The positive integer value
     """
 
     while True:

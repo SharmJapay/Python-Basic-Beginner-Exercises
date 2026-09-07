@@ -7,11 +7,11 @@ from the console, alongside a core string-trimming utility function.
 """
 
 
-def input_number() -> int:
-    """Returns a positive integer value
+def input_rows() -> int:
+    """Returns a number of rows value
 
     Returns
-        number [int]: The index number value
+        number [int]: The number of rows value
     """
 
     while True:
