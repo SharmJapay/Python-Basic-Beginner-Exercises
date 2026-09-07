@@ -15,7 +15,7 @@ def main() -> None:
             for number2 in range(1, 11):
                 print(f"{number1 * number2}", end=" ")
 
-            print("\n")
+            print("\n", end="")
 
         # Check if user wants to exit program
         quit_program = confirm_exit()

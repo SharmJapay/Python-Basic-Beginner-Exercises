@@ -16,7 +16,7 @@ def count_vowels(text: str) -> int:
     vowels = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
     total_count = 0
 
-    for vowel in vowels.keys():
+    for vowel in vowels:
         vowel_count = 0
 
         for char in text.lower():

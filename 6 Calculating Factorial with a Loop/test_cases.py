@@ -86,21 +86,21 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
 @pytest.mark.parametrize(
     "number, expected",
     [
-        # Case 1: integer 1 -> Should return 1
+        # Case 1: integer 0 -> Should return 1
         (0, 1),
-        # Case 2: integer 2 -> Should return 1
+        # Case 2: integer 1 -> Should return 1
         (1, 1),
-        # Case 3: integer 3 -> Should return 2
+        # Case 3: integer 2 -> Should return 2
         (2, 2),
-        # Case 4: integer 4 -> Should return 6
+        # Case 4: integer 3 -> Should return 6
         (3, 6),
-        # Case 5: integer 5 -> Should return 24
+        # Case 5: integer 4 -> Should return 24
         (4, 24),
-        # Case 6: integer 6 -> Should return 120
+        # Case 6: integer 5 -> Should return 120
         (5, 120),
         # Case 7: integer 6 -> Should return 720
         (6, 720),
-        # Case 8: integer 6 -> Should return 5040
+        # Case 8: integer 7 -> Should return 5040
         (7, 5040),
     ],
 )
