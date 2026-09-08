@@ -27,6 +27,18 @@ Inside each folder, you will find a standalone solution to a specific beginner-l
 13) Filtering Lists with Conditional Logic
 14) Substring Frequency Analysis
 15) Nested Loops for Pattern Generation
+16) Numerical Palindrome Check
+17) Merging Lists with Parity Filtering
+18) Integer Digit Extraction and Reversal
+19) Multi-Tiered Income Tax Calculation
+20) Nested Loops for Multiplication Tables
+21) Downward Half-Pyramid Pattern
+22) Custom Exponentiation Function
+23) Check Palindrome Number
+24) Generate Fibonacci Series
+25) Check Leap Year
+26) Merging Two Dictionaries
+27) Finding Common Elements (Intersections)
 
 
 ## Running the Code
