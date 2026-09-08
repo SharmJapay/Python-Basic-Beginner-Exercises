@@ -54,7 +54,6 @@ def input_dictionary() -> dict:
 
         except ValueError:
             print("Error! Cannot accept empty input value. Try Again.")
-            continue
 
 
 def confirm_exit() -> str:

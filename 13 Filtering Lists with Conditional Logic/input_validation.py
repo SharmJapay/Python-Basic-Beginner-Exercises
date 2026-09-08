@@ -11,7 +11,7 @@ def input_number_list() -> list:
     """Returns a list of numbers
 
     Returns
-        numbers [list]: List of numbers
+        [list]: List of numbers
     """
 
     while True:
@@ -24,9 +24,7 @@ def input_number_list() -> list:
                 raise ValueError
 
             try:
-                numbers = []
-                for item in input_numbers.split(","):
-                    numbers.append(int(item))
+                return [int(item) for item in input_numbers.split(",")]
 
             except ValueError:
                 print(
@@ -34,11 +32,8 @@ def input_number_list() -> list:
                 )
                 continue
 
-            return numbers
-
         except ValueError:
             print("Error! Cannot accept empty input value. Try Again.")
-            continue
 
 
 def confirm_exit() -> str:
