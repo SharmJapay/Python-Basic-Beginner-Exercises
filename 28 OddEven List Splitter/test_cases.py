@@ -1,8 +1,8 @@
-"""Test Cases for Filtering Lists with Conditional Logic Exercise"""
+"""Test Cases for OddEven List Splitter Exercise"""
 
 import pytest
 
-from main import divisible_by_five
+from main import split_even, split_odd
 from input_validation import input_number_list, confirm_exit
 
 
@@ -103,15 +103,42 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
 
 
 @pytest.mark.parametrize(
-    "list_items, expected",
+    "numbers, expected",
     [
-        # Case 1: "[10, 20, 33, 46, 55]" -> Should return [10, 20, 55]
-        ([10, 20, 33, 46, 55], [10, 20, 55]),
-        # Case 2: "[35, 100, 78, 65, 43]" -> Should return [35, 100, 65]
-        ([35, 100, 78, 65, 43], [35, 100, 65]),
+        # Case 1: "[10, 20, 33, 46, 55]" -> Should return [10, 20, 46]
+        ([10, 20, 33, 46, 55], [10, 20, 46]),
+        # Case 2: "[35, 100, 78, 65, 43]" -> Should return [100, 78]
+        ([35, 100, 78, 65, 43], [100, 78]),
+        # Case 3: "[15, 91, 87, 61, 121]" -> Should return []
+        ([15, 91, 87, 61, 121], []),
+        # Case 4: "[54, 72, 28, 188, 220]" -> Should return [54, 72, 28, 188, 220]
+        ([54, 72, 28, 188, 220], [54, 72, 28, 188, 220]),
+        # Case 5: "[12, 7, 34, 21, 5, 10, 8, 3, 19, 2]" -> Should return [12, 34, 10, 8, 2]
+        ([12, 7, 34, 21, 5, 10, 8, 3, 19, 2], [12, 34, 10, 8, 2]),
     ],
 )
-def test_divisible_by_five(list_items, expected):
+def test_split_even(numbers, expected):
     """Test that the function correctly outputs the expected value."""
 
-    assert divisible_by_five(list_items) == expected
+    assert split_even(numbers) == expected
+
+
+@pytest.mark.parametrize(
+    "numbers, expected",
+    [
+        # Case 1: "[10, 20, 33, 46, 55]" -> Should return [33,55]
+        ([10, 20, 33, 46, 55], [33, 55]),
+        # Case 2: "[35, 100, 78, 65, 43]" -> Should return [35, 65, 43]]
+        ([35, 100, 78, 65, 43], [35, 65, 43]),
+        # Case 3: "[15, 91, 87, 61, 121]" -> Should return [15, 91, 87, 61, 121]
+        ([15, 91, 87, 61, 121], [15, 91, 87, 61, 121]),
+        # Case 4: "[54, 72, 28, 188, 220]" -> Should return []
+        ([54, 72, 28, 188, 220], []),
+        # Case 5: "[12, 7, 34, 21, 5, 10, 8, 3, 19, 2]" -> Should return [7, 21, 5, 3, 19]
+        ([12, 7, 34, 21, 5, 10, 8, 3, 19, 2], [7, 21, 5, 3, 19]),
+    ],
+)
+def test_split_odd(numbers, expected):
+    """Test that the function correctly outputs the expected value."""
+
+    assert split_odd(numbers) == expected
