@@ -18,14 +18,13 @@ def input_text() -> str:
         try:
             text = input("Enter string here: ")
 
-            if text and text.split():
+            if text.strip():
                 return text
 
             raise ValueError
 
         except ValueError:
             print("Error! Cannot accept empty input value. Try Again.")
-            continue
 
 
 def confirm_exit() -> str:

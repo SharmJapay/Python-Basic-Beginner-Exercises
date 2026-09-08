@@ -18,14 +18,13 @@ def input_item() -> str:
         try:
             item = input("Enter item here: ")
 
-            if item and item.split():
+            if item.strip():
                 return item
 
             raise ValueError
 
         except ValueError:
             print("Error! Cannot accept empty input value. Try Again.")
-            continue
 
 
 def input_index_number() -> int:
