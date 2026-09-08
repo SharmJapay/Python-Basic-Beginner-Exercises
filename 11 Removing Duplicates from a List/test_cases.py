@@ -8,7 +8,7 @@ from input_validation import input_number_list, confirm_exit
 def test_input_number_list_valid_number_list(monkeypatch):
     """Test standard behavior when the user inputs a valid number list."""
 
-    # Arrange: Simulate typing 'Learning Python is fun' and hitting enter
+    # Arrange: Simulate typing '-10, 55, 64, 0, 667' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "-10, 55, 64, 0, 667")
 
     # Act
@@ -21,7 +21,7 @@ def test_input_number_list_valid_number_list(monkeypatch):
 def test_input_number_list_invalid_input_list(monkeypatch, capsys):
     """Test that the loop retries on bad input (different instance items) and succeeds on a valid number list."""
 
-    # Arrange: Simulate typing '', and then 'Hello World'
+    # Arrange: Simulate typing '-10, asd, 64, /, 667', and then '1, 2, 3, 4, 5'
     inputs = iter(["-10, asd, 64, /, 667", "1, 2, 3, 4, 5"])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
@@ -40,7 +40,7 @@ def test_input_number_list_invalid_input_list(monkeypatch, capsys):
 def test_input_number_list_invalid_empty_input(monkeypatch, capsys):
     """Test that the loop retries on bad input (empty value) and succeeds on a valid string."""
 
-    # Arrange: Simulate typing '', and then 'Hello World'
+    # Arrange: Simulate typing '', and then '1, 2, 3, 4, 5'
     inputs = iter(["", "1, 2, 3, 4, 5"])
     monkeypatch.setattr("builtins.input", lambda _: next(inputs))
 
@@ -59,7 +59,7 @@ def test_input_number_list_invalid_empty_input(monkeypatch, capsys):
 def test_confirm_exit_yes(monkeypatch):
     """Test standard behavior when the user inputs a 'yes' string."""
 
-    # Arrange: Simulate typing '5' and hitting enter
+    # Arrange: Simulate typing 'yes' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "yes")
 
     # Act
@@ -72,7 +72,7 @@ def test_confirm_exit_yes(monkeypatch):
 def test_confirm_exit_no(monkeypatch):
     """Test standard behavior when the user inputs a 'no' string."""
 
-    # Arrange: Simulate typing '5' and hitting enter
+    # Arrange: Simulate typing 'no' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "no")
 
     # Act

@@ -41,7 +41,7 @@ def test_input_text_invalid_empty_input(monkeypatch, capsys):
 def test_confirm_exit_yes(monkeypatch):
     """Test standard behavior when the user inputs a 'yes' string."""
 
-    # Arrange: Simulate typing '5' and hitting enter
+    # Arrange: Simulate typing 'yes' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "yes")
 
     # Act
@@ -54,7 +54,7 @@ def test_confirm_exit_yes(monkeypatch):
 def test_confirm_exit_no(monkeypatch):
     """Test standard behavior when the user inputs a 'no' string."""
 
-    # Arrange: Simulate typing '5' and hitting enter
+    # Arrange: Simulate typing 'no' and hitting enter
     monkeypatch.setattr("builtins.input", lambda _: "no")
 
     # Act
