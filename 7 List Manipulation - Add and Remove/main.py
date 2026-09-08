@@ -54,7 +54,7 @@ def main() -> None:
         elif action.lower() == "remove":
             index = input_index_number()
 
-            if index <= len(fruits) - 1:
+            if 0 <= index <= len(fruits) - 1:
                 fruit = fruits[index]
                 fruits = remove_item(fruits, index)
 

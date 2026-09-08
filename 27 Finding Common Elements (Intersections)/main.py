@@ -4,23 +4,17 @@ from input_validation import input_number_list, confirm_exit
 
 
 def find_common_items(list1: list, list2: list) -> list:
-    """Returns a list that contains odd values from list1 and even values from list2
+    """Returns a list that contains items present in both list1 and list2
 
     Arguments
         list1 [list]: First list
-        list1 [list]: Second list
+        list2 [list]: Second list
 
     Returns
-        [list]: A new list that contains odd values from list1 and even values from list2
+        [list]: A new list containing the intersection of both lists
     """
 
-    new_list = []
-
-    for item in list1:
-        if item in list2:
-            new_list.append(item)
-
-    return new_list
+    return [item for item in list1 if item in set(list2)]
 
 
 def main() -> None:

@@ -12,13 +12,8 @@ def divisible_by_five(list_items: list) -> list:
     Returns
         [list]: A new list that contains numbers divisible by 5
     """
-    validated_list = []
 
-    for item in list_items:
-        if item % 5 == 0:
-            validated_list.append(item)
-
-    return validated_list
+    return [item for item in list_items if item % 5 == 0]
 
 
 def main() -> None:

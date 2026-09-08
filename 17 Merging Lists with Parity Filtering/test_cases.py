@@ -2,7 +2,7 @@
 
 import pytest
 
-from main import creat_odd_even_list
+from main import create_odd_even_list
 from input_validation import input_number_list, confirm_exit
 
 
@@ -111,7 +111,7 @@ def test_confirm_exit_retries_on_invalid_input(monkeypatch, capsys):
         ([11, 22, 33, 44, 55], [23, 87, 66, 39, 52], [11, 33, 55, 66, 52]),
     ],
 )
-def test_creat_odd_even_list(list1, list2, expected):
+def test_create_odd_even_list(list1, list2, expected):
     """Test that the function correctly outputs the expected value."""
 
-    assert creat_odd_even_list(list1, list2) == expected
+    assert create_odd_even_list(list1, list2) == expected
