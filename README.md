@@ -39,6 +39,9 @@ Inside each folder, you will find a standalone solution to a specific beginner-l
 25) Check Leap Year
 26) Merging Two Dictionaries
 27) Finding Common Elements (Intersections)
+28) OddEven List Splitter
+29) Word Length Analysis
+30) Word Frequency Counter (The Histogram)
 
 
 ## Running the Code
