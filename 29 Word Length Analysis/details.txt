@@ -1,0 +1,13 @@
+Practice Problem: Create a list of 5 words. Write a loop that iterates through the list and prints each word alongside its character count.
+
+Exercise Purpose: This exercise introduces “Metadata Extraction.” Often, you aren’t just interested in the data itself, but in its properties. In web development, this logic is used to validate if a user’s password or username meets specific length requirements.
+
+Given Input: 
+words = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+
+Expected Output:
+Apple - 5
+Banana - 6
+Cherry - 6
+Date - 4
+Elderberry - 10
