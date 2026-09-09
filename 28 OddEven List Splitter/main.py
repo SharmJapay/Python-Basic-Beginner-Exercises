@@ -3,7 +3,7 @@
 from input_validation import input_number_list, confirm_exit
 
 
-def split_even(numbers: list) -> dict:
+def split_even(numbers: list) -> list:
     """Returns a list that contains even numbers only
 
     Arguments
@@ -16,7 +16,7 @@ def split_even(numbers: list) -> dict:
     return [number for number in numbers if number % 2 == 0]
 
 
-def split_odd(numbers: list) -> dict:
+def split_odd(numbers: list) -> list:
     """Returns a list that contains odd numbers only
 
     Arguments
